@@ -14,7 +14,6 @@ FIXOS = {
     "D: Condition": "As new - unused",
 }
 LEILAO = "Modern Home Decor"
-MENSAGEM = "Please place this lot in the Modern Home Decor weekly auction."
 TIPOS_PROIBIDOS = {"Casket"}
 RE_FOTO = re.compile(r"https://[^\s;]+?\.(?:jpe?g|png|webp)", re.I)
 
@@ -87,7 +86,6 @@ def gerar(dados, saida):
         linha["D: Depth"] = medida(lote["profundidade"])
         linha["Public photo URL"] = ";".join(fotos)
         linha["Estimated lot value"] = str(lote["valor"])
-        linha[coluna(cabecalho, "Message to Expert")] = lote.get("mensagem", MENSAGEM)
 
         portes = lote["portes"]
         if "perfil" in portes:
